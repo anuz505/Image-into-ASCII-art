@@ -2,7 +2,7 @@
 import PIL.Image
 
 #ascii character used to build the output text
-ASCII_CHARS = ["@","#","$","%","?","*","+",";",":",",","."]
+ASCII_CHARS = ["N","@","#","W","9","8","7","6","5","4","3","2","1","0","?","!","a","b","c",";",":","+","=","-",",","_"]
 #resize the image according to a new width 
 def resize_image(image,new_width=100):
     width, height = image.size
@@ -20,6 +20,7 @@ def grayify (image):
 def pixels_to_ascii(image):
     pixels = image.getdata()
     characters = "".join([ASCII_CHARS[int(pixel / (256 / len(ASCII_CHARS)))] for pixel in pixels])
+
     return characters
 
 # ...
